@@ -92,7 +92,7 @@ This project demonstrates how data-driven machine learning techniques can suppor
 ## Demo
 An interactive Streamlit app for presenting EDA, model evaluation and explainability, and live prediction.
 
-[Streamlit App](https://irfanfetahovic-ecommerce-data-analysis-codedashboard-m1y05z.streamlit.app/)
+[Streamlit App](https://irfanfetahovic-heart-disease-prediction-appapp-ehqh3d.streamlit.app/)
 
 
 

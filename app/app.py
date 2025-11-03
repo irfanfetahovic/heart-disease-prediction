@@ -233,7 +233,9 @@ with tab_model:
 
     # Detailed classification report
     st.markdown("#### Detailed Classification Report")
-    st.text(classification_report(y_test, y_pred))
+    report_dict = classification_report(y_test, y_pred, output_dict=True)
+    report_df = pd.DataFrame(report_dict).transpose()
+    st.dataframe(report_df)
 
     col1, col2 = st.columns(2)
     with col1:
