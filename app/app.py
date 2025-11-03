@@ -65,9 +65,6 @@ num_cols_idx = dfc.columns.get_indexer(num_cols)
 cat_cols_idx = dfc.columns.get_indexer(cat_cols)
 
 
-
-
-
 # --- SIDEBAR ---
 #st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/3/3d/Heart_coronary_arteries-en.svg")
 st.sidebar.title("Dashboard Info")
@@ -76,8 +73,6 @@ st.sidebar.metric("Samples", len(df))
 st.sidebar.metric("Features", df.shape[1])
 st.sidebar.metric("Positive cases", int(df['target'].sum()))
 st.sidebar.info("Note: This model is trained on the UCI Heart Disease dataset and is for educational use only.")
-
-
 
 
 # --- TAB SETUP ---
@@ -92,7 +87,6 @@ with tab_overview:
     st.write("Showing first 5 rows of the dataset:")
     st.dataframe(df.head())
     st.write("**Shape:**", df.shape)
-    # st.write("**Columns:**", list(df.columns))
     
     st.markdown("---")
     st.subheader("🧩 Feature Descriptions")
@@ -202,7 +196,6 @@ with tab_model:
     """)
 
 
-
     # --- METRICS ---
     from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, ConfusionMatrixDisplay, RocCurveDisplay, roc_auc_score
     from sklearn.model_selection import train_test_split
@@ -220,7 +213,6 @@ with tab_model:
     X_train = ct.transform(X_train)
     # Predict using the saved model
     y_pred = model.predict(X_test)
-    #y_test  = le.transform(y_test)
 
     acc = accuracy_score(y_test, y_pred)
     prec = precision_score(y_test, y_pred)
@@ -247,7 +239,6 @@ with tab_model:
     with col1:
         # --- CONFUSION MATRIX ---
         st.markdown("#### Confusion Matrix")
-        #st.subheader("Confusion Matrix")
         fig, ax = plt.subplots(figsize=(4, 3))
         ConfusionMatrixDisplay.from_predictions(y_test, y_pred, ax=ax, cmap="Blues")
         st.pyplot(fig)
@@ -255,14 +246,13 @@ with tab_model:
     with col2:
         # --- ROC CURVE ---
         st.markdown("#### ROC Curve")
-        #st.subheader("ROC Curve")
         fig, ax = plt.subplots(figsize=(4, 3))
         RocCurveDisplay.from_predictions(y_test, model.predict_proba(X_test)[:, 1], ax=ax)
         st.pyplot(fig)
     
     st.subheader("Feature Importance (SHAP Summary Plot)")
 
-        # Get feature names
+    # Get feature names
     num_feature_names = list(num_cols)
     cat_feature_names = list(ct.named_transformers_['onehot'].get_feature_names_out(cat_cols))
     feature_names = cat_feature_names + num_feature_names
@@ -311,7 +301,6 @@ with tab_predict:
                 X[:,num_cols_idx] = sc.transform(X[:,num_cols_idx])
                 X = ct.transform(X)
                 preds = model.predict(X)
-                #preds = le.inverse_transform(model.predict(X))
                 user_df["prediction"] = preds
                 st.subheader("Predictions:")
                 st.dataframe(user_df)
@@ -322,14 +311,6 @@ with tab_predict:
 
     elif mode == "Single Input":
         st.subheader("Enter feature values manually")
-
-        # input_data = {}
-        # for col in df.drop("target", axis=1).columns:
-        #     col_type = df[col].dtype
-        #     if col_type == "object" or df[col].nunique() < 10:
-        #         input_data[col] = st.selectbox(col, sorted(df[col].unique()))
-        #     else:
-        #         input_data[col] = st.number_input(col, float(df[col].min()), float(df[col].max()), float(df[col].mean()))
 
         # Define feature descriptions
         feature_descriptions = {
@@ -375,7 +356,6 @@ with tab_predict:
             X[:,num_cols_idx] = sc.transform(X[:,num_cols_idx])
             X = ct.transform(X)
             pred = model.predict(X)
-            #pred = le.inverse_transform(pred)[0]
 
             st.success(f"**Prediction:** {'🟥 Heart Disease (1)' if pred == 1 else '🟩 No Heart Disease (0)'}")
             

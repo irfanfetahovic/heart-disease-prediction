@@ -25,20 +25,20 @@ This project demonstrates how data-driven machine learning techniques can suppor
 - **Data Preprocessing & Feature Engineering**:  
   - Handling missing values and categorical encoding.  
   - Standard scaling, one-hot encoding, and feature type conversions.  
-  - Duplicate removal, optional outlier handling, and correlation-based feature selection.  
+  - Duplicate removal and optional outlier handling.  
 
 - **Modeling & Evaluation**:  
   - Multiple algorithms: Logistic Regression, KNN, Random Forest, XGBoost, and Neural Network.  
   - Hyperparameter tuning using **Optuna** for Logistic Regression and XGBoost.  
   - Cross-validation for unbiased model performance estimates.  
   - Evaluation metrics: Accuracy, F1, Precision, Recall, Confusion Matrix, ROC & AUC.  
-  - Feature importance visualization with SHAP for interpretable models.  
+  - Feature importance visualization with SHAP and LIME for interpretable models.  
 
 - **Interactive Prediction App**:  
   - Deploys the best-performing model (Logistic Regression) in **Streamlit**.  
   - Users can input patient data or upload CSVs for batch predictions.   
   - Displays model information and evaluation
-  - Visualizes model metrics, ROC curve and SHAP summary and force plots.
+  - Visualizes model metrics, ROC curve, and SHAP summary and force plots.
 
 
 
