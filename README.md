@@ -21,7 +21,7 @@ This project demonstrates how data-driven machine learning techniques can suppor
 
 ## Use Cases
 
-Healthcare organizations can integrate this model into their patient intake system to flag high-risk individuals and optimize prevention care programs. Insurance companies could use the nmodel to personalize health plans or risk assessment.
+Healthcare organizations can integrate this model into their patient intake system to flag high-risk individuals and optimize prevention care programs. Insurance companies could use the model to personalize health plans or risk assessment.
 
 
 
@@ -54,9 +54,14 @@ Healthcare organizations can integrate this model into their patient intake syst
 
 
 ## Key Results
-- Best model: Logistic Regresssion with hyperparameters: penatly - L2, solver - sag, C - 0.0457
-- Best model metrics: Accuracy - 0.90, Precision - 0.93, Recall - 0.87, F1 - 0.90, ROC AUC - 0.94
-- Mosti important feature identified by SHAP: 
+- Best model: Logistic Regression with hyperparameters: penalty - L2, solver - sag, C - 0.0457
+- Best model metrics: 
+    - Accuracy = 0.90
+    - Precision = 0.93
+    - Recall = 0.87
+    - F1 = 0.90
+    - ROC AUC = 0.94
+- Most important feature identified by SHAP: 
     - oldpeak (ST depression induced by exercise relative to rest)
     - thalach (Maximum heart rate achieved)
 
