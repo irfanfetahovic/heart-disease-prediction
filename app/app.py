@@ -84,7 +84,7 @@ tab_overview, tab_eda, tab_model, tab_predict = st.tabs(["📊 Overview", "🔍 
 # =====================
 with tab_overview:
     st.header("Dataset Overview")
-    st.write("Showing first 5 rows of the dataset:")
+    st.write("Showing first 5 rows of the dataset used for training:")
     st.dataframe(df.head())
     st.write("**Shape:**", df.shape)
     

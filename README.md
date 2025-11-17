@@ -1,4 +1,4 @@
-# ❤️ Heart Disease Prediction Dashboard
+# Heart Disease Prediction Dashboard
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -9,10 +9,19 @@ This project demonstrates a complete machine learning workflow: data exploration
 
 
 
+![Dashboard](images/dashboard.png)
+
+
+
 ## Motivation
 
 Early detection of heart disease can significantly reduce health risks and treatment costs.
 This project demonstrates how data-driven machine learning techniques can support medical decision-making and risk prediction.
+
+
+## Use Cases
+
+Healthcare organizations can integrate this model into their patient intake system to flag high-risk individuals and optimize prevention care programs. Insurance companies could use the nmodel to personalize health plans or risk assessment.
 
 
 
@@ -21,6 +30,8 @@ This project demonstrates how data-driven machine learning techniques can suppor
 - **Exploratory Data Analysis (EDA)**:  
   - Interactive visualizations of distributions, correlations, and crosstabs.  
   - Plots for heart disease by sex, age vs cholesterol, chest pain types, and more.  
+
+  <img src="images/heartdiseasebysex.png" width="500">
 
 - **Data Preprocessing & Feature Engineering**:  
   - Handling missing values and categorical encoding.  
@@ -41,6 +52,15 @@ This project demonstrates how data-driven machine learning techniques can suppor
   - Visualizes model metrics, ROC curve, and SHAP summary and force plots.
 
 
+
+## Key Results
+- Best model: Logistic Regresssion with hyperparameters: penatly - L2, solver - sag, C - 0.0457
+- Best model metrics: Accuracy - 0.90, Precision - 0.93, Recall - 0.87, F1 - 0.90, ROC AUC - 0.94
+- Mosti important feature identified by SHAP: 
+    - oldpeak (ST depression induced by exercise relative to rest)
+    - thalach (Maximum heart rate achieved)
+
+  <img src="images/shap.png" width="500">
 
 ## Workflow Overview
 
@@ -90,7 +110,7 @@ This project demonstrates how data-driven machine learning techniques can suppor
 
 
 ## Demo
-An interactive Streamlit app for presenting EDA, model evaluation and explainability, and live prediction.
+Try the interactive Streamlit app for presenting EDA, model evaluation and explainability, and live prediction.
 
 [Streamlit App](https://irfanfetahovic-heart-disease-prediction-appapp-ehqh3d.streamlit.app/)
 
